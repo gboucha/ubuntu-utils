@@ -1,5 +1,7 @@
 #!/bin/bash
 
+if `cat /etc/os-release | grep -i ubuntu`
+
 sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 sudo sed -i -e 's/us.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list
@@ -18,3 +20,4 @@ sudo apt-get install -y docker-ce
 sudo systemctl status docker
 
 sudo usermod -aG docker ${USER}
+
