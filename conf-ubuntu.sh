@@ -31,5 +31,11 @@ else echo OS=centos
 	sudo yum install vim -y
 	sudo yum install curl -y
 	sudo yum install git -y
+	curl -fsSL https://get.docker.com/ | sh
+	sudo systemctl start docker
+	sudo systemctl status docker
+	sudo systemctl enable docker
+	sudo usermod -aG docker $(whoami)
+	
 	
 fi
