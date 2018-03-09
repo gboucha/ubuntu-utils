@@ -23,6 +23,11 @@ then
 	sudo systemctl status docker
 
 	sudo usermod -aG docker ${USER}
+elif grep -i "Red Hat" /etc/os_release 1> /dev/null
+then
+	# -------- OS = Red Hat --------
+	
+
 
 else echo OS=centos
 
