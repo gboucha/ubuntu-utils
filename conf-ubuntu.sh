@@ -4,6 +4,7 @@ if grep -i ubuntu /etc/os-release 1> /dev/null
 then 
 
 	# ------ OS = Ubuntu -----------
+	echo "-------------- OS = Ubuntu -------------------"
 	sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	sudo echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 	sudo sed -i -e 's/us.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list
@@ -23,15 +24,23 @@ then
 	sudo systemctl status docker
 
 	sudo usermod -aG docker ${USER}
+
 elif grep -i "Red Hat" /etc/os_release 1> /dev/null
 then
 	# -------- OS = Red Hat --------
-	
+	echo "-------------- OS = RedHat -------------------"
+	sudo hostnamectl set-hostname gbouchaRHEL1
+	sudo hostnamectl set-hostname "gbouchaRHEL1"
+	sudo subscription-manager register --username gboucha --password Technet12 --auto-attach
+	sudo yum update -y
+	sudo yum install git -y
+	sudo yum install curl -y
 
 
-else echo OS=centos
+else 
 
 	#------ OS = Centos ---------
+	echo "-------------- OS = Centos -------------------"
 	sudo yum update -y
 	sudo yum install vim -y
 	sudo yum install curl -y
