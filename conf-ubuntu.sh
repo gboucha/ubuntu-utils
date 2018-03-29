@@ -25,12 +25,12 @@ then
 
 	sudo usermod -aG docker ${USER}
 
-elif grep -i "Red Hat" /etc/os_release 1> /dev/null
+elif grep -i "Red Hat" /etc/redhat-release 1> /dev/null
 then
 	# -------- OS = Red Hat --------
 	echo "-------------- OS = RedHat -------------------"
-	sudo hostnamectl set-hostname gbouchaRHEL1
-	sudo hostnamectl set-hostname "gbouchaRHEL1"
+	sudo hostnamectl set-hostname $1
+#	sudo hostnamectl set-hostname "gbouchaRHEL1"
 	sudo subscription-manager register --username gboucha --password Technet12 --auto-attach
 	sudo yum update -y
 	sudo yum install git -y
