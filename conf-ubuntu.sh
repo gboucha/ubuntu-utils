@@ -50,6 +50,9 @@ else
 	sudo systemctl status docker
 	sudo systemctl enable docker
 	sudo usermod -aG docker $(whoami)
+# git clone https://github.com/gboucha/ubuntu-utils
+
+
 	
 	
 fi
