@@ -1,3 +1,5 @@
 # ubuntu-utils
-test epepep
+
+Serie de scripts utiles pour Linux
+
 
